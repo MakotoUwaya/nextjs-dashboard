@@ -4,6 +4,7 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
+    "format": "prettier ./app --write",
     "seed": "node -r dotenv/config ./scripts/seed.js"
   },
   "dependencies": {
