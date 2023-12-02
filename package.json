@@ -8,7 +8,7 @@
     "lint": "eslint --cache 'app/**/*.{ts,tsx,js}'",
     "lint:fix": "eslint --cache --fix 'app/**/*.{ts,tsx,js}'",
     "format": "prettier ./app --write",
-    "seed": "node -r dotenv/config ./scripts/seed.js"
+    "seed": "node -r dotenv/config ./scripts/seed.cjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",

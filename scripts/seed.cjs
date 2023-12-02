@@ -4,8 +4,27 @@ const {
   customers,
   revenue,
   users,
-} = require('../app/lib/placeholder-data.js');
+} = require('../app/lib/placeholder-data.cjs');
 const bcrypt = require('bcrypt');
+
+async function truncateAllTables() {
+  try {
+    await sql`TRUNCATE TABLE users`;
+    console.log(`Truncate "users" table`);
+
+    await sql`TRUNCATE TABLE invoices`;
+    console.log(`Truncate "invoices" table`);
+
+    await sql`TRUNCATE TABLE customers`;
+    console.log(`Truncate "customers" table`);
+
+    await sql`TRUNCATE TABLE revenue`;
+    console.log(`Truncate "revenue" table`);
+  } catch (error) {
+    console.error('Error truncate table:', error);
+    throw error;
+  }
+}
 
 async function seedUsers() {
   try {
@@ -161,6 +180,7 @@ async function seedRevenue() {
 }
 
 (async () => {
+  await truncateAllTables();
   await seedUsers();
   await seedCustomers();
   await seedInvoices();
