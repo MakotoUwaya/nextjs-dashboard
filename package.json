@@ -5,8 +5,7 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "lint": "eslint --cache 'app/**/*.{ts,tsx,js}'",
-    "lint:fix": "eslint --cache --fix 'app/**/*.{ts,tsx,js}'",
+    "lint": "next lint",
     "format": "prettier ./app --write",
     "seed": "node -r dotenv/config ./scripts/seed.cjs"
   },
@@ -37,6 +36,7 @@
     "@typescript-eslint/parser": "^6.11.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.53.0",
+    "eslint-config-next": "14.1.0",
     "eslint-plugin-react": "^7.33.2",
     "globals": "13.23.0",
     "prettier": "^3.0.3"
